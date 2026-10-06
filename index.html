@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ff4f81" />
+
+  <title>Xcarleth ❤️</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --pink: #ff4f81;
+      --dark-pink: #e91e63;
+      --light-pink: #ffd6e5;
+      --cream: #fff8fb;
+      --text: #351b27;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Poppins", sans-serif;
+      color: var(--text);
+      overflow-x: hidden;
+
+      background:
+        radial-gradient(circle at 20% 20%, #ffffff 0%, transparent 25%),
+        radial-gradient(circle at 80% 80%, #ffc4d9 0%, transparent 30%),
+        linear-gradient(135deg, #ffd9e7, #fff0f6);
+    }
+
+    /* =========================================
+       FLOATING HEARTS
+    ========================================= */
+
+    .hearts {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .heart {
+      position: absolute;
+      bottom: -50px;
+      font-size: 20px;
+      opacity: 0.55;
+      animation: floatHeart linear infinite;
+    }
+
+    @keyframes floatHeart {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 0.6;
+      }
+
+      100% {
+        transform: translateY(-115vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* =========================================
+       MAIN CONTAINER
+    ========================================= */
+
+    .page {
+      position: relative;
+      z-index: 2;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 15px;
+    }
+
+    .card {
+      width: min(760px, 95vw);
+      min-height: 650px;
+
+      padding: 40px 30px;
+
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 35px;
+
+      box-shadow:
+        0 30px 90px rgba(156, 42, 85, 0.18),
+        inset 0 1px 0 rgba(255,255,255,.8);
+
+      text-align: center;
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* =========================================
+       TOP DECORATION
+    ========================================= */
+
+    .sparkles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .sparkle {
+      position: absolute;
+      color: #ff7da2;
+      animation: sparkle 2s ease-in-out infinite;
+    }
+
+    .sparkle:nth-child(1) {
+      top: 40px;
+      left: 50px;
+    }
+
+    .sparkle:nth-child(2) {
+      top: 100px;
+      right: 60px;
+      animation-delay: .5s;
+    }
+
+    .sparkle:nth-child(3) {
+      bottom: 100px;
+      left: 80px;
+      animation-delay: 1s;
+    }
+
+    .sparkle:nth-child(4) {
+      bottom: 70px;
+      right: 80px;
+      animation-delay: 1.5s;
+    }
+
+    @keyframes sparkle {
+      0%,100% {
+        transform: scale(.7) rotate(0);
+        opacity: .3;
+      }
+
+      50% {
+        transform: scale(1.4) rotate(20deg);
+        opacity: 1;
+      }
+    }
+
+    /* =========================================
+       INTRO
+    ========================================= */
+
+    .intro {
+      transition: .6s ease;
+    }
+
+    .intro.hidden {
+      opacity: 0;
+      transform: scale(.9);
+      pointer-events: none;
+      position: absolute;
+    }
+
+    .small-text {
+      font-size: 14px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--dark-pink);
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .big-heart {
+      width: 150px;
+      height: 150px;
+      margin: 10px auto 25px;
+
+      display: grid;
+      place-items: center;
+
+      font-size: 75px;
+
+      background: linear-gradient(135deg, #ff668f, #e91e63);
+      border-radius: 50%;
+
+      box-shadow:
+        0 15px 40px rgba(233, 30, 99, .3);
+
+      animation: heartbeat 1.4s infinite;
+    }
+
+    @keyframes heartbeat {
+      0%,100% {
+        transform: scale(1);
+      }
+
+      14% {
+        transform: scale(1.1);
+      }
+
+      28% {
+        transform: scale(1);
+      }
+
+      42% {
+        transform: scale(1.08);
+      }
+    }
+
+    h1 {
+      font-family: "Dancing Script", cursive;
+      font-size: clamp(45px, 8vw, 78px);
+      color: var(--dark-pink);
+      line-height: 1;
+      margin-bottom: 15px;
+    }
+
+    .subtitle {
+      max-width: 540px;
+      margin: 0 auto 35px;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #674653;
+    }
+
+    /* =========================================
+       BUTTONS
+    ========================================= */
+
+    .button-area {
+      position: relative;
+      height: 180px;
+      width: min(600px, 100%);
+      margin: auto;
+    }
+
+    button {
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 700;
+      border-radius: 999px;
+      transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+    }
+
+    .yes-btn {
+      position: absolute;
+      left: 24%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+
+      padding: 17px 38px;
+      font-size: 18px;
+
+      color: white;
+      background: linear-gradient(135deg, #ff4f81, #e91e63);
+
+      box-shadow: 0 12px 30px rgba(233, 30, 99, .3);
+
+      z-index: 5;
+    }
+
+    .yes-btn:hover {
+      transform: translate(-50%, -50%) scale(1.08);
+      box-shadow: 0 18px 40px rgba(233, 30, 99, .4);
+    }
+
+    .no-btn {
+      position: absolute;
+      left: 65%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+
+      padding: 14px 28px;
+      font-size: 16px;
+
+      background: #eeeeee;
+      color: #555;
+
+      box-shadow: 0 8px 20px rgba(0,0,0,.1);
+
+      z-index: 4;
+    }
+
+    .hint {
+      font-size: 12px;
+      opacity: .55;
+      margin-top: -15px;
+    }
+
+    /* =========================================
+       DATE PLAN
+    ========================================= */
+
+    .date-section {
+      display: none;
+      animation: reveal .8s ease forwards;
+    }
+
+    .date-section.active {
+      display: block;
+    }
+
+    @keyframes reveal {
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(.95);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .success-title {
+      font-family: "Dancing Script", cursive;
+      font-size: clamp(55px, 9vw, 90px);
+      color: var(--dark-pink);
+      margin-bottom: 5px;
+    }
+
+    .success-subtitle {
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: #754456;
+    }
+
+    .date-card {
+      max-width: 560px;
+      margin: auto;
+
+      background: rgba(255,255,255,.8);
+      border-radius: 25px;
+      padding: 25px;
+
+      box-shadow: 0 15px 45px rgba(100,30,60,.1);
+    }
+
+    .date-card h3 {
+      font-family: "Dancing Script", cursive;
+      font-size: 35px;
+      color: var(--dark-pink);
+      margin-bottom: 20px;
+    }
+
+    .date-details {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 25px;
+    }
+
+    .detail {
+      padding: 15px 10px;
+      background: #fff2f7;
+      border-radius: 18px;
+    }
+
+    .detail .emoji {
+      font-size: 25px;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .detail strong {
+      font-size: 13px;
+      display: block;
+      color: #8b5267;
+    }
+
+    .detail span {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    /* =========================================
+       LOVE LETTER
+    ========================================= */
+
+    .letter {
+      margin-top: 25px;
+      padding: 22px;
+      background: #fffafc;
+      border-radius: 20px;
+      text-align: left;
+      line-height: 1.8;
+      font-size: 14px;
+      border-left: 4px solid var(--pink);
+    }
+
+    .letter-title {
+      font-family: "Dancing Script", cursive;
+      font-size: 28px;
+      color: var(--dark-pink);
+      margin-bottom: 8px;
+    }
+
+    /* =========================================
+       FINAL BUTTON
+    ========================================= */
+
+    .final-btn {
+      margin-top: 25px;
+      padding: 15px 30px;
+
+      color: white;
+      background: linear-gradient(135deg, #ff4f81, #e91e63);
+
+      box-shadow: 0 10px 25px rgba(233,30,99,.25);
+    }
+
+    .final-btn:hover {
+      transform: scale(1.05);
+    }
+
+    /* =========================================
+       FINAL MESSAGE
+    ========================================= */
+
+    .final-message {
+      display: none;
+      animation: reveal 1s ease;
+    }
+
+    .final-message.active {
+      display: block;
+    }
+
+    .giant-heart {
+      font-size: 110px;
+      animation: heartbeat 1.2s infinite;
+      margin: 20px 0;
+    }
+
+    .final-message h2 {
+      font-family: "Dancing Script", cursive;
+      font-size: clamp(50px, 8vw, 80px);
+      color: var(--dark-pink);
+    }
+
+    .final-message p {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+
+    /* =========================================
+       CONFETTI
+    ========================================= */
+
+    .confetti {
+      position: fixed;
+      top: -20px;
+      width: 10px;
+      height: 16px;
+      z-index: 999;
+      pointer-events: none;
+      animation: confettiFall linear forwards;
+    }
+
+    @keyframes confettiFall {
+      to {
+        transform:
+          translateY(110vh)
+          rotate(720deg);
+      }
+    }
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+
+    @media (max-width: 600px) {
+
+      .card {
+        padding: 35px 18px;
+        min-height: 600px;
+      }
+
+      .big-heart {
+        width: 120px;
+        height: 120px;
+        font-size: 60px;
+      }
+
+      .subtitle {
+        font-size: 14px;
+      }
+
+      .button-area {
+        height: 190px;
+      }
+
+      .yes-btn {
+        left: 28%;
+        padding: 15px 28px;
+      }
+
+      .no-btn {
+        left: 70%;
+        padding: 13px 22px;
+      }
+
+      .date-details {
+        grid-template-columns: 1fr;
+      }
+
+      .detail {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-align: left;
+      }
+
+      .detail .emoji {
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================================
+       FLOATING HEARTS
+  ========================================== -->
+
+  <div class="hearts" id="hearts"></div>
+
+
+  <!-- =========================================
+       MAIN PAGE
+  ========================================== -->
+
+  <main class="page">
+
+    <div class="card">
+
+      <!-- Decorative sparkles -->
+      <div class="sparkles">
+        <span class="sparkle">✦</span>
+        <span class="sparkle">✧</span>
+        <span class="sparkle">✦</span>
+        <span class="sparkle">✧</span>
+      </div>
+
+
+      <!-- =====================================
+           INTRO SCREEN
+      ====================================== -->
+
+      <section class="intro" id="intro">
+
+        <div class="small-text">
+          I have a very important question...
+        </div>
+
+        <div class="big-heart">
+          ❤️
+        </div>
+
+        <h1>
+          Xcarleth...
+        </h1>
+
+        <p class="subtitle">
+          I've been thinking about something, and I figured
+          there was no better way to ask than to make you
+          a ridiculously cute website. 😌
+        </p>
+
+
+        <div class="button-area" id="buttonArea">
+
+          <button class="yes-btn" id="yesBtn">
+            Yes! ❤️
+          </button>
+
+          <button class="no-btn" id="noBtn">
+            No 😭
+          </button>
+
+        </div>
+
+        <div class="hint" id="hint">
+          You should probably choose wisely... 👀
+        </div>
+
+      </section>
+
+
+      <!-- =====================================
+           DATE REVEAL
+      ====================================== -->
+
+      <section class="date-section" id="dateSection">
+
+        <div class="small-text">
+          I knew you'd say yes 😌
+        </div>
+
+        <div class="success-title">
+          It's a date! 💕
+        </div>
+
+        <p class="success-subtitle">
+          Okay, now let's make it official...
+        </p>
+
+
+        <div class="date-card">
+
+          <h3>
+            Our Little Date ✨
+          </h3>
+
+
+          <div class="date-details">
+
+            <div class="detail">
+              <span class="emoji">📅</span>
+              <div>
+                <strong>DATE</strong>
+                <span>Just us ❤️</span>
+              </div>
+            </div>
+
+            <div class="detail">
+              <span class="emoji">🍽️</span>
+              <div>
+                <strong>PLAN</strong>
+                <span>Dinner & Fun</span>
+              </div>
+            </div>
+
+            <div class="detail">
+              <span class="emoji">💑</span>
+              <div>
+                <strong>COMPANY</strong>
+                <span>Me & You</span>
+              </div>
+            </div>
+
+          </div>
+
+
+          <div class="letter">
+
+            <div class="letter-title">
+              A little something for you...
+            </div>
+
+            <p id="typedMessage"></p>
+
+          </div>
+
+
+          <button class="final-btn" id="finalBtn">
+            I'm officially saying yes 💗
+          </button>
+
+        </div>
+
+      </section>
+
+
+      <!-- =====================================
+           FINAL SCREEN
+      ====================================== -->
+
+      <section class="final-message" id="finalMessage">
+
+        <div class="giant-heart">
+          💖
+        </div>
+
+        <h2>
+          Can't wait! 🥰
+        </h2>
+
+        <p>
+          Now you can't take it back. 😌
+        </p>
+
+        <p style="margin-top:15px; opacity:.7;">
+          See you on our date, hermosa ❤️
+        </p>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <!-- =========================================
+       JAVASCRIPT
+  ========================================== -->
+
+  <script>
+
+    /* =========================================
+       FLOATING HEARTS
+    ========================================== */
+
+    const heartsContainer = document.getElementById("hearts");
+
+    const heartSymbols = ["❤️", "💕", "💗", "💖", "💘", "💓"];
+
+    function createHeart() {
+
+      const heart = document.createElement("div");
+
+      heart.classList.add("heart");
+
+      heart.textContent =
+        heartSymbols[
+          Math.floor(Math.random() * heartSymbols.length)
+        ];
+
+      heart.style.left =
+        Math.random() * 100 + "%";
+
+      heart.style.fontSize =
+        (12 + Math.random() * 25) + "px";
+
+      heart.style.animationDuration =
+        (6 + Math.random() * 8) + "s";
+
+      heart.style.animationDelay =
+        Math.random() * 4 + "s";
+
+      heartsContainer.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 15000);
+    }
+
+    setInterval(createHeart, 500);
+
+
+    /* =========================================
+       BUTTON LOGIC
+    ========================================== */
+
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+    const buttonArea = document.getElementById("buttonArea");
+    const hint = document.getElementById("hint");
+
+    let yesScale = 1;
+
+    const hints = [
+      "Are you sure? 🥺",
+      "That button seems to be running away... 👀",
+      "Nice try 😂",
+      "I don't think that's the right answer.",
+      "The universe says YES. ✨",
+      "Come onnnn 😭❤️",
+      "You can't escape the date 😈",
+      "Just press YES already! 💕"
+    ];
+
+    let hintIndex = 0;
+
+
+    function moveNoButton() {
+
+      const areaRect =
+        buttonArea.getBoundingClientRect();
+
+      const buttonRect =
+        noBtn.getBoundingClientRect();
+
+      const maxX =
+        areaRect.width - buttonRect.width;
+
+      const maxY =
+        areaRect.height - buttonRect.height;
+
+      const randomX =
+        Math.random() * maxX;
+
+      const randomY =
+        Math.random() * maxY;
+
+      noBtn.style.left = randomX + "px";
+      noBtn.style.top = randomY + "px";
+
+      noBtn.style.transform = "none";
+
+      /* Make YES bigger */
+
+      yesScale += 0.08;
+
+      if (yesScale > 1.8) {
+        yesScale = 1.8;
+      }
+
+      yesBtn.style.transform =
+        `translate(-50%, -50%) scale(${yesScale})`;
+
+      /* Change hint */
+
+      hint.textContent =
+        hints[hintIndex % hints.length];
+
+      hintIndex++;
+    }
+
+
+    /* Desktop */
+
+    noBtn.addEventListener("mouseenter", moveNoButton);
+
+
+    /* Mobile */
+
+    noBtn.addEventListener("touchstart", function(e) {
+
+      e.preventDefault();
+
+      moveNoButton();
+
+    });
+
+
+    /* Prevent actual NO click */
+
+    noBtn.addEventListener("click", function(e) {
+
+      e.preventDefault();
+
+      moveNoButton();
+
+    });
+
+
+    /* =========================================
+       YES BUTTON
+    ========================================== */
+
+    yesBtn.addEventListener("click", function() {
+
+      document.getElementById("intro")
+        .classList.add("hidden");
+
+      setTimeout(() => {
+
+        document.getElementById("dateSection")
+          .classList.add("active");
+
+        startConfetti();
+
+        typeMessage();
+
+      }, 500);
+
+    });
+
+
+    /* =========================================
+       TYPEWRITER LOVE MESSAGE
+    ========================================== */
+
+    const message =
+      "I just wanted to take you out, spend some time together, make you smile, eat something good, and create another memory with you. Nothing complicated. Just you, me, and a really good time. ❤️";
+
+
+    function typeMessage() {
+
+      const element =
+        document.getElementById("typedMessage");
+
+      let index = 0;
+
+      function type() {
+
+        if (index < message.length) {
+
+          element.textContent +=
+            message.charAt(index);
+
+          index++;
+
+          setTimeout(type, 28);
+
+        }
+
+      }
+
+      type();
+    }
+
+
+    /* =========================================
+       CONFETTI
+    ========================================== */
+
+    function startConfetti() {
+
+      for (let i = 0; i < 180; i++) {
+
+        setTimeout(() => {
+
+          const confetti =
+            document.createElement("div");
+
+          confetti.className =
+            "confetti";
+
+          confetti.style.left =
+            Math.random() * 100 + "vw";
+
+          confetti.style.background =
+            randomColor();
+
+          confetti.style.width =
+            (5 + Math.random() * 8) + "px";
+
+          confetti.style.height =
+            (8 + Math.random() * 12) + "px";
+
+          confetti.style.animationDuration =
+            (2.5 + Math.random() * 3) + "s";
+
+          confetti.style.transform =
+            `rotate(${Math.random() * 360}deg)`;
+
+          document.body.appendChild(confetti);
+
+          setTimeout(() => {
+            confetti.remove();
+          }, 6000);
+
+        }, Math.random() * 1800);
+
+      }
+
+    }
+
+
+    function randomColor() {
+
+      const colors = [
+        "#ff4f81",
+        "#ff8fab",
+        "#e91e63",
+        "#ffd166",
+        "#ffffff",
+        "#ffb3c6"
+      ];
+
+      return colors[
+        Math.floor(Math.random() * colors.length)
+      ];
+
+    }
+
+
+    /* =========================================
+       FINAL YES BUTTON
+    ========================================== */
+
+    document
+      .getElementById("finalBtn")
+      .addEventListener("click", function() {
+
+        document
+          .getElementById("dateSection")
+          .style.display = "none";
+
+        document
+          .getElementById("finalMessage")
+          .classList.add("active");
+
+        startConfetti();
+
+        /* Extra hearts */
+
+        for (let i = 0; i < 60; i++) {
+
+          setTimeout(() => {
+
+            createHeart();
+
+          }, i * 50);
+
+        }
+
+      });
+
+  </script>
+
+</body>
+</html>
